@@ -15,27 +15,27 @@
   /* Brand palette */
   --color-brand-50: #FBFFE4;
   --color-brand-100: #F6FFC4;
-  --color-brand-200: #EBFF91;
-  --color-brand-300: #D9FF51;
-  --color-brand-400: #C6FE1E;
-  --color-brand-500: #A6E500;
-  --color-brand-600: #81B700;
-  --color-brand-700: #618B00;
-  --color-brand-800: #4D6D07;
-  --color-brand-900: #415C0B;
-  --color-brand-950: #213400;
+  --color-brand-200: #FFF9A3;
+  --color-brand-300: #FFF861;
+  --color-brand-400: #FFF233;
+  --color-brand-500: #E6D800;
+  --color-brand-600: #B3A800;
+  --color-brand-700: #807800;
+  --color-brand-800: #665F07;
+  --color-brand-900: #554F0B;
+  --color-brand-950: #332F00;
 
   /* Neon palette */
-  --color-neon-100: hsl(73, 100%, 88%);
-  --color-neon-300: hsl(75, 100%, 66%);
-  --color-neon-400: hsl(75, 99%, 56%);
-  --color-neon-500: hsl(76, 100%, 45%);
-  --color-neon-600: hsl(77, 100%, 36%);
-  --color-neon-700: hsl(78, 100%, 27%);
-  --color-neon-900: hsl(76, 80%, 20%);
+  --color-neon-100: hsl(57, 100%, 90%);
+  --color-neon-300: hsl(57, 100%, 78%);
+  --color-neon-400: hsl(57, 100%, 69%);
+  --color-neon-500: hsl(57, 100%, 58%);
+  --color-neon-600: hsl(57, 100%, 45%);
+  --color-neon-700: hsl(57, 100%, 34%);
+  --color-neon-900: hsl(57, 80%, 22%);
 
   /* Dark base */
-  --color-dark-base: #0D1500;
+  --color-dark-base: #151400;
 
   /* Shadcn semantic tokens — reference CSS variables for light/dark switching */
   --color-background: var(--background);
@@ -75,13 +75,13 @@
    ========================= */
 :root {
   /* Neon palette (raw HSL for arbitrary values) */
-  --neon-100: 73, 100%, 88%;
-  --neon-300: 75, 100%, 66%;
-  --neon-400: 75, 99%, 56%;
-  --neon-500: 76, 100%, 45%;
-  --neon-600: 77, 100%, 36%;
-  --neon-700: 78, 100%, 27%;
-  --neon-900: 76, 80%, 20%;
+  --neon-100: 57, 100%, 90%;
+  --neon-300: 57, 100%, 78%;
+  --neon-400: 57, 100%, 69%;
+  --neon-500: 57, 100%, 58%;
+  --neon-600: 57, 100%, 45%;
+  --neon-700: 57, 100%, 34%;
+  --neon-900: 57, 80%, 22%;
 
   /* Gray palette (raw HSL for arbitrary values) */
   --gray-50: 210, 20%, 98%;
@@ -103,20 +103,20 @@
   --secondary-foreground: var(--color-white);
   --muted: hsl(210, 20%, 98%);
   --muted-foreground: hsl(218, 11%, 65%);
-  --accent: hsl(75, 99%, 56%);
+  --accent: hsl(57, 100%, 69%);
   --accent-foreground: hsl(240, 6%, 10%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
   --border: hsl(220, 13%, 91%);
   --input: hsl(220, 13%, 91%);
-  --ring: hsl(75, 99%, 56%);
+  --ring: hsl(57, 100%, 69%);
   --radius: 0.75rem;
 
   /* Chart / status */
-  --chart-1: hsl(75, 99%, 56%);
+  --chart-1: hsl(57, 100%, 69%);
   --chart-2: hsl(240, 6%, 10%);
   --chart-3: hsl(240, 4%, 46%);
-  --chart-4: hsl(76, 100%, 45%);
+  --chart-4: hsl(57, 100%, 58%);
   --chart-5: hsl(240, 5%, 96%);
 }
 
@@ -124,13 +124,13 @@
    CSS Variables — Dark Theme
    ========================= */
 .dark {
-  --neon-100: 73, 100%, 88%;
-  --neon-300: 75, 100%, 66%;
-  --neon-400: 75, 99%, 56%;
-  --neon-500: 76, 100%, 45%;
-  --neon-600: 77, 100%, 36%;
-  --neon-700: 78, 100%, 27%;
-  --neon-900: 76, 80%, 20%;
+  --neon-100: 57, 100%, 90%;
+  --neon-300: 57, 100%, 78%;
+  --neon-400: 57, 100%, 69%;
+  --neon-500: 57, 100%, 58%;
+  --neon-600: 57, 100%, 45%;
+  --neon-700: 57, 100%, 34%;
+  --neon-900: 57, 80%, 22%;
 
   --gray-50: 210, 20%, 98%;
   --gray-100: 220, 14%, 96%;
@@ -144,24 +144,24 @@
   --card-foreground: hsl(0, 0%, 98%);
   --popover: hsl(0, 0%, 9%);
   --popover-foreground: hsl(0, 0%, 98%);
-  --primary: hsl(75, 99%, 56%);
+  --primary: hsl(57, 100%, 69%);
   --primary-foreground: hsl(0, 0%, 4%);
   --secondary: var(--color-white);
   --secondary-foreground: var(--color-zinc-800);
   --muted: hsl(0, 0%, 15%);
   --muted-foreground: hsl(0, 0%, 64%);
-  --accent: hsl(75, 99%, 56%);
+  --accent: hsl(57, 100%, 69%);
   --accent-foreground: hsl(0, 0%, 4%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
   --border: hsl(0, 0%, 18%);
   --input: hsl(0, 0%, 18%);
-  --ring: hsl(75, 99%, 56%);
+  --ring: hsl(57, 100%, 69%);
 
-  --chart-1: hsl(75, 99%, 56%);
+  --chart-1: hsl(57, 100%, 69%);
   --chart-2: hsl(240, 4%, 46%);
   --chart-3: hsl(240, 6%, 10%);
-  --chart-4: hsl(76, 100%, 45%);
+  --chart-4: hsl(57, 100%, 58%);
   --chart-5: hsl(240, 5%, 96%);
 }
 
@@ -292,7 +292,7 @@
    Custom utilities
    ========================= */
 @utility bg-page-gradient {
-  background: linear-gradient(180deg, hsl(73, 100%, 88%) 0%, #ffffff 5%);
+  background: linear-gradient(180deg, hsl(57, 100%, 90%) 0%, #ffffff 5%);
   &:where(.dark, .dark *) {
     background: linear-gradient(180deg, hsl(73, 40%, 10%) 0%, #0D1500 5%);
   }
