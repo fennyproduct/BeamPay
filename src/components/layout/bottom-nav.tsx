@@ -82,11 +82,23 @@ export function BottomNav() {
                 href={ROUTES.QR}
                 className="absolute left-[calc(50%-1px)] top-[calc(50%-5px)] -translate-x-1/2 -translate-y-1/2 w-[120px]"
               >
-                <div className="bg-gradient-to-b from-[#f9fafb] to-[#e5e7eb] dark:from-zinc-700 dark:to-zinc-800 overflow-clip p-[6px] rounded-[32px] shadow-[0px_2px_8px_0px_rgba(31,92,11,0.2)]">
-                  <div className="bg-gradient-to-b from-[#d9ff51] to-[#81b700] h-[80px] relative rounded-[26px]">
+                <div
+                  className="overflow-clip p-[6px] rounded-[32px]"
+                  style={{
+                    background: "linear-gradient(to bottom, #f9fafb, #e5e7eb)",
+                    boxShadow: `0px 2px 8px 0px color-mix(in srgb, var(--color-brand-900) 20%, transparent)`,
+                  }}
+                >
+                  <div
+                    className="h-[80px] relative rounded-[26px]"
+                    style={{ background: `linear-gradient(to bottom, var(--color-brand-300), var(--color-brand-600))` }}
+                  >
                     <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
                       <div className="content-stretch flex flex-col items-center justify-center p-[5px] relative size-full">
-                        <div className="bg-gradient-to-t from-[#d9ff51] to-[#a6e500] flex-1 min-h-px min-w-px relative rounded-[21px] w-full">
+                        <div
+                          className="flex-1 min-h-px min-w-px relative rounded-[21px] w-full"
+                          style={{ background: `linear-gradient(to top, var(--color-brand-300), var(--color-brand-500))` }}
+                        >
                           <div className="flex flex-col items-center justify-center overflow-clip rounded-[inherit] size-full">
                             <div className="content-stretch flex flex-col items-center justify-center p-[10px] relative size-full">
                               <div className="flex flex-col items-center justify-center gap-[2px]">
@@ -95,7 +107,7 @@ export function BottomNav() {
                                     <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 32 32.9999">
                                       <g>
                                         <g filter="url(#filter0_di_bottom_nav)">
-                                          <path d={svgPaths.p948ce00} shapeRendering="crispEdges" stroke="#415C0B" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
+                                          <path d={svgPaths.p948ce00} shapeRendering="crispEdges" stroke="var(--color-brand-900)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" />
                                         </g>
                                       </g>
                                       <defs>
@@ -120,8 +132,8 @@ export function BottomNav() {
                                   </div>
                                 </div>
                                 <span
-                                  className="font-medium text-[12px] text-center text-[#415c0b] leading-normal whitespace-nowrap"
-                                  style={{ textShadow: "0px 1px 2px rgba(255,255,255,0.4)" }}
+                                  className="font-medium text-[12px] text-center leading-normal whitespace-nowrap"
+                                  style={{ color: "var(--color-brand-900)", textShadow: "0px 1px 2px rgba(255,255,255,0.4)" }}
                                 >
                                   Pay
                                 </span>
@@ -131,7 +143,11 @@ export function BottomNav() {
                         </div>
                       </div>
                     </div>
-                    <div aria-hidden="true" className="absolute border border-[#81b700] border-solid inset-0 pointer-events-none rounded-[26px] shadow-[0px_0px_0px_2px_#e5e7eb] dark:shadow-[0px_0px_0px_2px_rgba(255,255,255,0.1)]" />
+                    <div
+                      aria-hidden="true"
+                      className="absolute border border-solid inset-0 pointer-events-none rounded-[26px] shadow-[0px_0px_0px_2px_#e5e7eb] dark:shadow-[0px_0px_0px_2px_rgba(255,255,255,0.1)]"
+                      style={{ borderColor: "var(--color-brand-600)" }}
+                    />
                   </div>
                 </div>
               </Link>
