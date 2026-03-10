@@ -1,27 +1,307 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* =========================
+   Class-based dark mode
+   ========================= */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* =========================
+   Theme — Design tokens
+   ========================= */
+@theme {
+  /* Font */
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Brand palette */
+  --color-brand-50: #FBFFE4;
+  --color-brand-100: #F6FFC4;
+  --color-brand-200: #EBFF91;
+  --color-brand-300: #D9FF51;
+  --color-brand-400: #C6FE1E;
+  --color-brand-500: #A6E500;
+  --color-brand-600: #81B700;
+  --color-brand-700: #618B00;
+  --color-brand-800: #4D6D07;
+  --color-brand-900: #415C0B;
+  --color-brand-950: #213400;
+
+  /* Neon palette */
+  --color-neon-100: hsl(73, 100%, 88%);
+  --color-neon-300: hsl(75, 100%, 66%);
+  --color-neon-400: hsl(75, 99%, 56%);
+  --color-neon-500: hsl(76, 100%, 45%);
+  --color-neon-600: hsl(77, 100%, 36%);
+  --color-neon-700: hsl(78, 100%, 27%);
+  --color-neon-900: hsl(76, 80%, 20%);
+
+  /* Dark base */
+  --color-dark-base: #0D1500;
+
+  /* Shadcn semantic tokens — reference CSS variables for light/dark switching */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* =========================
+   CSS Variables — Light Theme
+   ========================= */
+:root {
+  /* Neon palette (raw HSL for arbitrary values) */
+  --neon-100: 73, 100%, 88%;
+  --neon-300: 75, 100%, 66%;
+  --neon-400: 75, 99%, 56%;
+  --neon-500: 76, 100%, 45%;
+  --neon-600: 77, 100%, 36%;
+  --neon-700: 78, 100%, 27%;
+  --neon-900: 76, 80%, 20%;
+
+  /* Gray palette (raw HSL for arbitrary values) */
+  --gray-50: 210, 20%, 98%;
+  --gray-100: 220, 14%, 96%;
+  --gray-200: 220, 13%, 91%;
+  --gray-400: 218, 11%, 65%;
+  --gray-950: 240, 6%, 10%;
+
+  /* Semantic tokens (full color values) */
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(240, 6%, 10%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 6%, 10%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(240, 6%, 10%);
+  --primary: hsl(var(--neon-500));
+  --primary-foreground: hsl(240, 6%, 10%);
+  --secondary: var(--color-zinc-800);
+  --secondary-foreground: var(--color-white);
+  --muted: hsl(210, 20%, 98%);
+  --muted-foreground: hsl(218, 11%, 65%);
+  --accent: hsl(75, 99%, 56%);
+  --accent-foreground: hsl(240, 6%, 10%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 13%, 91%);
+  --input: hsl(220, 13%, 91%);
+  --ring: hsl(75, 99%, 56%);
+  --radius: 0.75rem;
+
+  /* Chart / status */
+  --chart-1: hsl(75, 99%, 56%);
+  --chart-2: hsl(240, 6%, 10%);
+  --chart-3: hsl(240, 4%, 46%);
+  --chart-4: hsl(76, 100%, 45%);
+  --chart-5: hsl(240, 5%, 96%);
+}
+
+/* =========================
+   CSS Variables — Dark Theme
+   ========================= */
+.dark {
+  --neon-100: 73, 100%, 88%;
+  --neon-300: 75, 100%, 66%;
+  --neon-400: 75, 99%, 56%;
+  --neon-500: 76, 100%, 45%;
+  --neon-600: 77, 100%, 36%;
+  --neon-700: 78, 100%, 27%;
+  --neon-900: 76, 80%, 20%;
+
+  --gray-50: 210, 20%, 98%;
+  --gray-100: 220, 14%, 96%;
+  --gray-200: 220, 13%, 91%;
+  --gray-400: 218, 11%, 65%;
+  --gray-950: 240, 6%, 10%;
+
+  --background: hsl(0, 0%, 4%);
+  --foreground: hsl(0, 0%, 98%);
+  --card: hsl(0, 0%, 9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --popover: hsl(0, 0%, 9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --primary: hsl(75, 99%, 56%);
+  --primary-foreground: hsl(0, 0%, 4%);
+  --secondary: var(--color-white);
+  --secondary-foreground: var(--color-zinc-800);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 64%);
+  --accent: hsl(75, 99%, 56%);
+  --accent-foreground: hsl(0, 0%, 4%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(0, 0%, 18%);
+  --input: hsl(0, 0%, 18%);
+  --ring: hsl(75, 99%, 56%);
+
+  --chart-1: hsl(75, 99%, 56%);
+  --chart-2: hsl(240, 4%, 46%);
+  --chart-3: hsl(240, 6%, 10%);
+  --chart-4: hsl(76, 100%, 45%);
+  --chart-5: hsl(240, 5%, 96%);
+}
+
+/* =========================
+   Base styles
+   ========================= */
+@layer base {
+  html {
+    @apply bg-white text-zinc-900;
+  }
+
+  html.dark {
+    background-color: #0D1500;
+    @apply text-zinc-50;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* =========================
+   Animations (replaces tailwindcss-animate)
+   ========================= */
+@keyframes enter {
+  from {
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0)
+      scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1));
+  }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes exit {
+  to {
+    opacity: var(--tw-exit-opacity, 1);
+    transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0)
+      scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1));
+  }
+}
+
+@utility animate-in {
+  animation-name: enter;
+  animation-duration: 150ms;
+  --tw-enter-opacity: initial;
+  --tw-enter-scale: initial;
+  --tw-enter-translate-x: initial;
+  --tw-enter-translate-y: initial;
+}
+
+@utility animate-out {
+  animation-name: exit;
+  animation-duration: 150ms;
+  --tw-exit-opacity: initial;
+  --tw-exit-scale: initial;
+  --tw-exit-translate-x: initial;
+  --tw-exit-translate-y: initial;
+}
+
+@utility fade-in-0 {
+  --tw-enter-opacity: 0;
+}
+
+@utility fade-out-0 {
+  --tw-exit-opacity: 0;
+}
+
+@utility fade-out-80 {
+  --tw-exit-opacity: 0.8;
+}
+
+@utility zoom-in-95 {
+  --tw-enter-scale: 0.95;
+}
+
+@utility zoom-out-95 {
+  --tw-exit-scale: 0.95;
+}
+
+@utility slide-in-from-top-2 {
+  --tw-enter-translate-y: -0.5rem;
+}
+
+@utility slide-in-from-bottom-2 {
+  --tw-enter-translate-y: 0.5rem;
+}
+
+@utility slide-in-from-left-2 {
+  --tw-enter-translate-x: -0.5rem;
+}
+
+@utility slide-in-from-right-2 {
+  --tw-enter-translate-x: 0.5rem;
+}
+
+@utility slide-in-from-top-full {
+  --tw-enter-translate-y: -100%;
+}
+
+@utility slide-in-from-bottom-full {
+  --tw-enter-translate-y: 100%;
+}
+
+@utility slide-in-from-bottom {
+  --tw-enter-translate-y: 100%;
+}
+
+@utility slide-out-to-bottom {
+  --tw-exit-translate-y: 100%;
+}
+
+@utility slide-out-to-right-full {
+  --tw-exit-translate-x: 100%;
+}
+
+@utility slide-in-from-left-half {
+  --tw-enter-translate-x: -50%;
+}
+
+@utility slide-in-from-top-half {
+  --tw-enter-translate-y: -48%;
+}
+
+@utility slide-out-to-left-half {
+  --tw-exit-translate-x: -50%;
+}
+
+@utility slide-out-to-top-half {
+  --tw-exit-translate-y: -48%;
+}
+
+/* =========================
+   Custom utilities
+   ========================= */
+@utility bg-page-gradient {
+  background: linear-gradient(180deg, hsl(73, 100%, 88%) 0%, #ffffff 5%);
+  &:where(.dark, .dark *) {
+    background: linear-gradient(180deg, hsl(73, 40%, 10%) 0%, #0D1500 5%);
+  }
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
