@@ -174,7 +174,7 @@
   }
 
   html.dark {
-    background-color: #0D1500;
+    background-color: #151400;
     @apply text-zinc-50;
   }
 }
@@ -294,7 +294,7 @@
 @utility bg-page-gradient {
   background: linear-gradient(180deg, hsl(57, 100%, 90%) 0%, #ffffff 5%);
   &:where(.dark, .dark *) {
-    background: linear-gradient(180deg, hsl(73, 40%, 10%) 0%, #0D1500 5%);
+    background: linear-gradient(180deg, hsl(57, 40%, 10%) 0%, #151400 5%);
   }
 }
 
