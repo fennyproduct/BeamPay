@@ -59,7 +59,8 @@ export function WalletBalanceCard() {
       glass.style.boxShadow =
         "inset 0 2px 2px rgba(0,0,0,0.05), inset 0 -2px 2px rgba(255,255,255,0.5), inset 0 0 1px 2px rgba(255,255,255,0.5)";
       glass.style.backdropFilter = "blur(0.5px)";
-      (glass.style as Record<string, string>)["WebkitBackdropFilter"] = "blur(0.5px)";
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (glass.style as any).WebkitBackdropFilter = "blur(0.5px)";
 
       // Border — rotate conic gradient to follow cursor angle
       const angle = Math.atan2(y - 0.5, x - 0.5) * (180 / Math.PI);
