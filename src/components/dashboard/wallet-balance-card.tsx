@@ -92,7 +92,8 @@ export function WalletBalanceCard() {
     glass.style.boxShadow =
       "inset 0 2px 2px rgba(0,0,0,0.05), inset 0 -2px 2px transparent, inset 0 0 2px 4px rgba(255,255,255,0.05)";
     glass.style.backdropFilter = "blur(2px)";
-    glass.style.WebkitBackdropFilter = "blur(2px)";
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (glass.style as any).WebkitBackdropFilter = "blur(2px)";
     border.style.opacity = "0.4";
     shimmer.style.opacity = "0";
     blur.style.opacity = "1";
