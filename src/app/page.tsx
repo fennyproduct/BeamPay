@@ -64,7 +64,7 @@ export default function SplashPage() {
         }`}
       >
         <Image
-          src="/images/beampay-logo.png"
+          src="/images/BeamPay-Logo-Splash.png"
           alt="BeamPay"
           width={192}
           height={42}
